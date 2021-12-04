@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src='https://unpkg.com/pdfmake@0.2.4/build/pdfmake.js'></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.66/vfs_fonts.js"></script>
+    <title>report</title>
+</head>
+<body>
+    <h1>Отчет</h1>
+    <p id='date'>{{ time }}</p>
+    <p id='count'>Выявлено {{ all_entities   }} проблемных объектов.</p>
+    {% for el in Entities %}
+        <p id='entity-{{ el.entity_id}}'>({{ el.this_id}}) На территории {{ el.position }} обнаружен нефтеразлив. Распространение пятна
+            {{ el.area }} га,</p>
+{#        <p id='area'>Расчетный объем утечки: _______ куб.м</p>#}
+        <p id='danger-{{ el.entity_id}}'>Степень опасности {{ el.danger_level }} </p>
+        <p id='info-{{ el.entity_id}}'>Сведения об объекте: {{ el.pipeline }}</p><br>
+{#        <p id='pipeline'>Предполагаемая причина – разрыв нефтепровода в пределах отрезка ______, ______ (координаты необходимого количества точек).</p>#}
+    {% endfor %}
+    <script>
+    var dd = {
+        content: [
+            {
+                text: 'Отчет',
+                style: 'header'
+            },
+            " ",
+            {
+                text: document.getElementById('date').innerHTML,
+                style: 'subheader'
+            },
+            " ",
+
+            {
+                text: document.getElementById('count').innerHTML,
+                style: 'subheader'
+            },
+            " ",
+            {% for el in Entities %}
+            document.getElementById('entity-{{ el.entity_id}}').innerHTML,
+            {#document.getElementById('area-{{ el.entity_id}}').innerHTML,#}
+            document.getElementById('danger-{{ el.entity_id}}').innerHTML,
+            document.getElementById('info-{{ el.entity_id}}').innerHTML,
+                " ",
+            {#document.getElementById('pipeline').innerHTML,#}
+            {% endfor %}
+
+        ],
+        styles: {
+            header: {
+                fontSize: 18,
+                bold: true
+            },
+            subheader: {
+                fontSize: 15,
+                bold: false
+            },
+            quote: {
+                italics: true
+            },
+            small: {
+                fontSize: 8
+            }
+        }
+
+    }
+    pdfMake.createPdf(dd).download('name.pdf');
+    </script>
+</body>
+
+</html>
