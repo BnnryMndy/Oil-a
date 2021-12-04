@@ -1,20 +1,10 @@
-<h4>Реализованная функциональность</h4>
-<ul>
-    <li></li>
-    <li></li>
-    <li></li>
-</ul> 
-<h4>Особенность проекта в следующем:</h4>
-<ul>
- <li></li>
- <li></li>
- </ul>
 <h4>Основной стек технологий:</h4>
 <ul>
-    <li></li>
-	<li></li>
-	<li></li>
-	<li></li>
+    <li>Python</li> 
+    <li>JavaScript</li>
+    <li>PostgreSQL</li>
+    <li>Pipeline U-Net / DeepLabV3</li>
+    <li>Django</li> 
 </ul>
 
 
