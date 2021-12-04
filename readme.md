@@ -46,8 +46,8 @@ python manage.py runserver
 
 <h4>Разработчики</h4>
 
-<P>Кристина Жаткина teamlead https://t.me/kriszhatkina</P>
-<P>Янина Смирнова analyst https://t.me/YaninaSmirnova</P>
-<P>Коновалова Настасья designer  https://t.me/NastasyaK</P>
-<P>Евгений Ершов frontend https://t.me/evgforte</P>
-<P>Лазарев Антон backend https://t.me/Anton_web_Lazarev</P>
+<P>Кристина Жаткина https://t.me/kriszhatkina</P>
+<P>Янина Смирнова https://t.me/YaninaSmirnova</P>
+<P>Коновалова Настасья https://t.me/NastasyaK</P>
+<P>Евгений Ершов https://t.me/evgforte</P>
+<P>Лазарев Антон https://t.me/Anton_web_Lazarev</P>
